@@ -16,15 +16,15 @@ rename "certificate.pem" to the above command's output, for example:
 
 now make sure you have an ADB connection to your device
 
-`adb push 9a5ba575.0 /sdcard
+`adb push 9a5ba575.0 /sdcard`
 
-adb shell mount -o rw,remount /system
+`adb shell mount -o rw,remount /system`
 
-cp /sdcard/9a5ba575.0 /system/etc/security/cacerts
+`cp /sdcard/9a5ba575.0 /system/etc/security/cacerts`
 
-chmod 644 /system/etc/security/cacerts/9a5ba575.0
+`chmod 644 /system/etc/security/cacerts/9a5ba575.0`
 
-chown root:root /system/etc/security/cacerts/9a5ba575.0`
+`chown root:root /system/etc/security/cacerts/9a5ba575.0`
 
 after that you should REBOOT!
 
