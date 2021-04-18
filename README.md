@@ -5,9 +5,10 @@
 
 ATTENTION: this needs a rooted devices
 
-after exporting Burp's DER certificate, we need to change it PEM format, although this isn't necessary, but it seems that Android CA store doesn't like DER format
+after exporting Burp's DER certificate, we need to change it to PEM format, although this isn't necessary, but it seems that Android CA store doesn't like DER format
 
 `openssl x509 -inform der -in $CERT_NAME -out certificate.pem`
+
 `openssl x509 -inform PEM -subject_hash_old -in certificate.pem | head -1` #my output was 9a5ba575
 
 rename "certificate.pem" to the above command's output, for example:
@@ -16,9 +17,13 @@ rename "certificate.pem" to the above command's output, for example:
 now make sure you have an ADB connection to your device
 
 `adb push 9a5ba575.0 /sdcard
+
 adb shell mount -o rw,remount /system
+
 cp /sdcard/9a5ba575.0 /system/etc/security/cacerts
+
 chmod 644 /system/etc/security/cacerts/9a5ba575.0
+
 chown root:root /system/etc/security/cacerts/9a5ba575.0`
 
 after that you should REBOOT!
