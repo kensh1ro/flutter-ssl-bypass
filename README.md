@@ -51,7 +51,7 @@ this step here only differs for osx users
 
 `sysctl -w net.ipv4.ip_forward=1`
 
-NOTE: you can also add a redirect for port 80 to 8080 by chaning `--dport 443 to --dport 80`
+NOTE: you can also add a redirect for port 80 to 8080 by changing `--dport 443 to --dport 80`
 ### for osx:
 `sudo sysctl -w net.inet.ip.forwarding=1`
 
