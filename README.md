@@ -1,6 +1,6 @@
 # flutter-ssl-bypass
 
-### tested on linux
+### tested on linux and osx
 ## i will assume that you already have burp's certificate installed to system CA store, if not then follow along 🤦
 
 ATTENTION: this needs a rooted devices
@@ -43,16 +43,27 @@ and linux PC got 192.168.1.9
 ![image](https://user-images.githubusercontent.com/46089361/115142889-ccde2000-a04c-11eb-859f-9d5501a83f5c.png)
 
 
-## 2) **Second step is to forward http/https traffic to Burp Suite**
+## 2) **Second step is to forward http/https traffic to Burp Suite** 
+this step here only differs for osx users
 
+### for linux:
 `iptables -i wlan0 -t nat -A PREROUTING -p tcp -j REDIRECT --dport 443 --to-ports 8080`
 
+`sysctl -w net.ipv4.ip_forward=1`
+
 NOTE: you can also add a redirect for port 80 to 8080 by chaning `--dport 443 to --dport 80`, and do not forget to enable IP forwarding
+### for osx:
+`sudo sysctl -w net.inet.ip.forwarding=1`
+
+`echo 'rdr pass inet proto tcp from any to any port {80,443} -> 127.0.0.1 port 8080' > pfctl.txt`
+
+`sudo pfctl -f pfctl.txt -e`
+
 
 
 ## 3) **Third step is to let Burp Suite capture the forwarded traffic**
 make sure to enable invisible proxying
-and for HTTPS, enable force use of TLS
+and, enable force use of TLS
 ![image](https://user-images.githubusercontent.com/46089361/115143520-868ac000-a050-11eb-9fad-5e3829a1f7da.png)
 
 
