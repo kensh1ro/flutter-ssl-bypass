@@ -1,9 +1,9 @@
 # flutter-ssl-bypass
 
 ### tested on linux and osx
-## i will assume that you already have burp's certificate installed to system CA store, if not then follow along 🤦
+## i will assume that you already have burp's certificate installed to system CA store, if not then follow along
 
-ATTENTION: this needs a rooted devices
+ATTENTION: this needs a rooted device
 
 after exporting Burp's DER certificate, we need to change it to PEM format, although this isn't necessary, but it seems that Android CA store doesn't like DER format
 
@@ -63,7 +63,6 @@ NOTE: you can also add a redirect for port 80 to 8080 by changing `--dport 443 t
 
 ## 3) **Third step is to let Burp Suite capture the forwarded traffic**
 make sure to enable invisible proxying
-and, enable force use of TLS
 ![image](https://user-images.githubusercontent.com/46089361/115143520-868ac000-a050-11eb-9fad-5e3829a1f7da.png)
 
 
