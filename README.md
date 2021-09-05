@@ -63,6 +63,7 @@ NOTE: you can also add a redirect for port 80 to 8080 by changing `--dport 443 t
 
 ## 3) **Third step is to let Burp Suite capture the forwarded traffic**
 make sure to enable invisible proxying
+
 ![image](https://user-images.githubusercontent.com/46089361/115143520-868ac000-a050-11eb-9fad-5e3829a1f7da.png)
 
 
