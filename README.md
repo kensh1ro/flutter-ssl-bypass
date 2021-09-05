@@ -76,4 +76,4 @@ at the end it should look something like this (pay attention to the User Agent):
 
 ![image](https://user-images.githubusercontent.com/46089361/115143751-dae26f80-a051-11eb-9d25-a74a9219d451.png)
 
-## NOTE: This is applicable on all non-proxy aware libraries
+## NOTE: This is applicable on all non-proxy aware libraries (Xamarin, Okhttp3..)
