@@ -18,7 +18,11 @@ now make sure you have an ADB connection to your device
 
 `adb push 9a5ba575.0 /sdcard`
 
-`adb shell mount -o rw,remount /system`
+`adb shell`
+
+`su`
+
+`mount -o rw,remount /system`
 
 `cp /sdcard/9a5ba575.0 /system/etc/security/cacerts`
 
