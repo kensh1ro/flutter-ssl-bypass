@@ -51,7 +51,7 @@ and linux PC got 192.168.1.9
 this step here only differs for osx users
 
 ### for linux:
-`iptables -i wlan0 -t nat -A PREROUTING -p tcp -j REDIRECT --dport 443 --to-ports 8080`
+`iptables -t nat -A PREROUTING -p tcp -j REDIRECT --dport 443 --to-ports 8080`
 
 `sysctl -w net.ipv4.ip_forward=1`
 
