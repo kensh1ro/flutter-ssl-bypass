@@ -1,7 +1,6 @@
 # flutter-ssl-bypass
 
 ### tested on linux and osx
-## i will assume that you already have burp's certificate installed to system CA store, if not then follow along
 
 ATTENTION: this needs a rooted device
 
@@ -22,7 +21,7 @@ now make sure you have an ADB connection to your device
 
 `su`
 
-`mount -o rw,remount /system`
+`mount -o rw,remount /system` or `adb remount`
 
 `cp /sdcard/9a5ba575.0 /system/etc/security/cacerts`
 
@@ -37,7 +36,6 @@ after that you should REBOOT!
 You will need:
 - Android device (rooted physical phone preferred)
 - a PC with linux installed
-- a brain ;)
 
 lets assume that our android device has the IP address 192.168.1.7
 and linux PC got 192.168.1.9
